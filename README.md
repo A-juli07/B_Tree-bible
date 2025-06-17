@@ -1,7 +1,5 @@
 # B-Tree para analise da Biblia
 
-## Introdução
-
 Este projeto realiza uma analise em uma B-Tree, medindo o tempo (μs) de inserção e remoção de cada token lido do arquivo `blivre.txt`. Conforme a árvore cresce, capturamos operações estruturais (split, merge, rebalanceamento) e exportamos os resultados em CSV para análise de comportamento amortizado e picos de latência.
 
 ## Como Rodar
