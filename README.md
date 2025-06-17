@@ -48,8 +48,8 @@ Este projeto realiza uma analise em uma B-Tree, medindo o tempo (μs) de inserç
 │   └── acumulado.png           # Tempo acumulado das operações
 ├── utils/                       # Dados de entrada
 │   └── blivre.txt              # Texto da Bíblia Livre em formato TXT
-├── btree.c                      # Implementação em C da estrutura e benchmark
-├── btree.exe                    # Executável (Windows)
+|   ├── btree.c                  # Implementação em C da estrutura e benchmark
+|   ├── btree.exe                # Executável
 └── B-tree.csv                   # CSV gerado com tempos (operation,node_count,time_us)
 ```
 
@@ -86,10 +86,13 @@ main():
     log(delete, node_count, us)
 ```
 
-## Insights do Benchmark do Benchmark do Benchmark
+## Insights dos Graficos
 
+<img src="https://github.com/A-juli07/B_Tree-bible/blob/main/graficos/Inserção.png" alt="Gráfico 1" width="48%" style="display: inline-block;">
 * **Inserção**: picos de até \~360 μs em splits iniciais; após \~200 000 tokens, latência estabiliza em 1–10 μs.
+<img src="https://github.com/A-juli07/B_Tree-bible/blob/main/graficos/Remoção.png" alt="Gráfico 2" width="48%" style="display: inline-block;">
 * **Remoção**: picos de \~150 μs em merges/redistribuições; geralmente 1–5 μs quando nó está balanceado.
+<img src="https://github.com/A-juli07/B_Tree-bible/blob/main/graficos/Acumulado.png" alt="Gráfico 3" width="48%" style="display: inline-block;">
 * **Tempo Acumulado**: inserção e remoção crescem quase linearmente, totalizando cerca de 3,4 s cada para \~247 000 tokens.
 
 ## Conclusão
