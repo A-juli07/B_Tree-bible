@@ -88,11 +88,11 @@ main():
 
 ## Insights dos Graficos
 
-<img src="https://github.com/A-juli07/B_Tree-bible/blob/main/graficos/Inserção.png" alt="Gráfico 1" width="48%" style="display: inline-block;">
+<img src="https://github.com/A-juli07/B_Tree-bible/blob/main/graficos/insercao.png" alt="Gráfico 1" width="48%" style="display: inline-block;">
 * **Inserção**: picos de até \~360 μs em splits iniciais; após \~200 000 tokens, latência estabiliza em 1–10 μs.
-<img src="https://github.com/A-juli07/B_Tree-bible/blob/main/graficos/Remoção.png" alt="Gráfico 2" width="48%" style="display: inline-block;">
+<img src="https://github.com/A-juli07/B_Tree-bible/blob/main/graficos/remocao.png" alt="Gráfico 2" width="48%" style="display: inline-block;">
 * **Remoção**: picos de \~150 μs em merges/redistribuições; geralmente 1–5 μs quando nó está balanceado.
-<img src="https://github.com/A-juli07/B_Tree-bible/blob/main/graficos/Acumulado.png" alt="Gráfico 3" width="48%" style="display: inline-block;">
+<img src="https://github.com/A-juli07/B_Tree-bible/blob/main/graficos/acumulado.png" alt="Gráfico 3" width="48%" style="display: inline-block;">
 * **Tempo Acumulado**: inserção e remoção crescem quase linearmente, totalizando cerca de 3,4 s cada para \~247 000 tokens.
 
 ## Conclusão
