@@ -86,14 +86,51 @@ main():
     log(delete, node_count, us)
 ```
 
-## Insights dos Graficos
+## Resultados e Interpretação dos Gráficos
 
-<img src="https://github.com/A-juli07/B_Tree-bible/blob/main/graficos/insercao.png" alt="Gráfico 1" width="48%" style="display: inline-block;">
-* **Inserção**: picos de até \~360 μs em splits iniciais; após \~200 000 tokens, latência estabiliza em 1–10 μs.
-<img src="https://github.com/A-juli07/B_Tree-bible/blob/main/graficos/remocao.png" alt="Gráfico 2" width="48%" style="display: inline-block;">
-* **Remoção**: picos de \~150 μs em merges/redistribuições; geralmente 1–5 μs quando nó está balanceado.
-<img src="https://github.com/A-juli07/B_Tree-bible/blob/main/graficos/acumulado.png" alt="Gráfico 3" width="48%" style="display: inline-block;">
-* **Tempo Acumulado**: inserção e remoção crescem quase linearmente, totalizando cerca de 3,4 s cada para \~247 000 tokens.
+### Desempenho de Inserção (`insercao.png`)
+
+<img src="https://github.com/A-juli07/B_Tree-bible/blob/main/graficos/insercao.png" alt="Gráfico 1" width="80%" style="display: inline-block;">
+
+* **Formato do gráfico**: tempo de cada operação de inserção (μs) versus número de nós da árvore.
+* **Observações**:
+
+  * Picos mais elevados (< 120 μs) ocorrem nos primeiros splits, quando a altura da B-Tree aumenta de 1 para 2 e 3 níveis.
+  * Após \~200 000 tokens, a latência de inserção se estabiliza entre **1 e 10 μs**, indicando comportamento amortizado constante.
+  * Pontos isolados acima de 20 μs correspondem a operações de reorganização de página (split).
+
+### Desempenho de Remoção (`remocao.png`)
+
+<img src="https://github.com/A-juli07/B_Tree-bible/blob/main/graficos/remocao.png" alt="Gráfico 2" width="80%" style="display: inline-block;">
+
+* **Formato do gráfico**: tempo de cada operação de remoção (μs) versus número de nós.
+* **Observações**:
+
+  * Picos de remoção chegam a **\~150 μs**, associados a eventos de *merge* ou redistribuição de chaves.
+  * A maior parte das remoções ocorre em **1–5 μs**, quando o nó ainda contém chaves suficientes.
+  * Spikes isolados correspondem a merges de níveis superiores da árvore.
+
+### Comparativo Inserção vs Remoção (`comparacao.png`)
+
+<img src="https://github.com/A-juli07/B_Tree-bible/blob/main/graficos/comparacao.png" alt="Gráfico 3" width="80%" style="display: inline-block;">
+
+* **Formato do gráfico**: ambas as curvas (verde para inserção, roxa para remoção) sobrepostas.
+* **Observações**:
+
+  * Inserção apresenta picos mais frequentes e elevados, refletindo splits.
+  * Remoção exibe picos menos intensos, mas também recorrentes durante merges.
+  * Fora dos picos, ambas as operações mantêm latências baixas e similares.
+
+### Tempo Acumulado (`acumulado.png`)
+
+<img src="https://github.com/A-juli07/B_Tree-bible/blob/main/graficos/acumulado.png" alt="Gráfico 4" width="80%" style="display: inline-block;">
+
+* **Formato do gráfico**: somatório dos tempos de inserção e remoção ao longo do benchmark.
+* **Observações**:
+
+  * A curva de inserção (verde) cresce quase linearmente até **\~4 000 000 μs** (\~4 s) para \~247 000 nós.
+  * A curva de remoção (roxa) acompanha crescimento linear, aproximando-se de **\~1 500 000 μs** (\~1,5 s).
+  * A diferença absoluta reflete o custo extra de splits comparado a merges.
 
 ## Conclusão
 
@@ -109,3 +146,6 @@ A B‑Tree de ordem 3 apresenta comportamento amortizado eficiente, com latênc
 ---
 
 Ana Julia Vieira Pereira Andrade da Costa
+
+
+
