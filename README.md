@@ -74,7 +74,7 @@ remove_key(tree, key):
   se root vazia:
     root ← ajustar_raiz(root)
 
-// Leitura e benchmark
+// Leitura e analise
 main():
   tokens ← ler_tokens("utils/blivre.txt")
   for cada token em tokens:
