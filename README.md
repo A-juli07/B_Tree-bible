@@ -92,7 +92,7 @@ main():
 
 <img src="https://github.com/A-juli07/B_Tree-bible/blob/main/graficos/insercao.png" alt="Gráfico 1" width="80%" style="display: inline-block;">
 
-* **Formato do gráfico**: tempo de cada operação de inserção (μs) versus número de nós da árvore.
+* **Formato do gráfico**: tempo de cada operação de inserção (μs) x número de nós da árvore.
 * **Observações**:
 
   * Picos mais elevados (< 120 μs) ocorrem nos primeiros splits, quando a altura da B-Tree aumenta de 1 para 2 e 3 níveis.
@@ -103,7 +103,7 @@ main():
 
 <img src="https://github.com/A-juli07/B_Tree-bible/blob/main/graficos/remocao.png" alt="Gráfico 2" width="80%" style="display: inline-block;">
 
-* **Formato do gráfico**: tempo de cada operação de remoção (μs) versus número de nós.
+* **Formato do gráfico**: tempo de cada operação de remoção (μs) x número de nós.
 * **Observações**:
 
   * Picos de remoção chegam a **\~150 μs**, associados a eventos de *merge* ou redistribuição de chaves.
@@ -125,7 +125,7 @@ main():
 
 <img src="https://github.com/A-juli07/B_Tree-bible/blob/main/graficos/acumulado.png" alt="Gráfico 4" width="80%" style="display: inline-block;">
 
-* **Formato do gráfico**: somatório dos tempos de inserção e remoção ao longo do benchmark.
+* **Formato do gráfico**: somatório dos tempos de inserção e remoção ao longo da analise.
 * **Observações**:
 
   * A curva de inserção (verde) cresce quase linearmente até **\~4 000 000 μs** (\~4 s) para \~247 000 nós.
@@ -134,7 +134,7 @@ main():
 
 ## Conclusão
 
-A B‑Tree de ordem 3 apresenta comportamento amortizado eficiente, com latências baixas na maioria das operações e picos pontuais bem distribuídos. Inserções são levemente mais custosas que remoções, mas ambos os processos permanecem na mesma ordem de grandeza.
+A B‑Tree apresenta comportamento amortizado eficiente, com latências baixas na maioria das operações e picos pontuais bem distribuídos. Inserções são levemente mais custosas que remoções, mas ambos os processos permanecem na mesma ordem de grandeza.
 
 ## Ambiente de Execução
 
